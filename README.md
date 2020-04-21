@@ -1,5 +1,5 @@
 
-# 🗝 Flutter Login & Registration Using Back4App  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+# :lock: Flutter Login & Registration Using Back4App  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 
 This project demonstrates how to use [Back4App](https://github.com/phillwiggins/flutter_parse_sdk) to authenticate users in a flutter application. 
