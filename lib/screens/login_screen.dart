@@ -157,24 +157,28 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: FlatButton(
                     onPressed: () async {
-
-                      setState(() { _hasError = false; });//reset previous error message
+                      setState(() {
+                        _hasError = false;
+                      }); //reset previous error message
 
                       if (_formKey.currentState.validate()) {
                         ParseUser user = ParseUser(_usernameController.text,
                             _passwordController.text, '');
                         ParseResponse response = await user.login();
-                        
+
                         _usernameController.clear();
                         _passwordController.clear();
 
                         if (response.success) {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                        }else{
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
+                        } else {
                           setState(() {
                             _hasError = true;
                             _errorMessage = response.error.message;
-                          });                          
+                          });
                         }
                       }
                     },
@@ -187,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 Container(
                   child: Text(
@@ -230,6 +234,62 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 30,
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: 45,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        border: Border.all(color: Theme.of(context).accentColor)
+                      ),
+                      child: InkWell(
+                        onTap: (){},
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset('assets/images/google.png'),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      width: 45,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        border: Border.all(color: Theme.of(context).accentColor)
+                      ),
+                      child: InkWell(
+                        onTap: (){},
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset('assets/images/facebook.png'),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      width: 45,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        border: Border.all(color: Theme.of(context).accentColor)
+                      ),
+                      child: InkWell(
+                        onTap: (){},
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset('assets/images/twitter.png'),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
